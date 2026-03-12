@@ -5,6 +5,17 @@ parallel, Intersection-free iso-surface extraction module used in [PaMO](https:/
 # Installation
 Requirements: torch (must be compatible with CUDA version), trimesh
 ```
+conda create -n pdmc python=3.10 -y
+conda activate pdmc
+
+python -m pip install --upgrade pip
+python -m pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
+
+conda install -y -c "nvidia/label/cuda-12.8.0" cuda-toolkit cuda-compiler
+
+export CUDA_HOME="$CONDA_PREFIX"
+export PATH="$CUDA_HOME/bin:$PATH"
+
 cd pdmc
 pip install --no-build-isolation -e .
 ```
